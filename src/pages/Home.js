@@ -4,7 +4,8 @@ import ImageUploader from "../components/imageuploader";
 
 function Home() {
   return (
-    <div>
+    <div >
+      
       <h1>Plating Team Submission Form</h1>
         <ImageUploader />
     </div>
