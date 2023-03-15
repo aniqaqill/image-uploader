@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Dropzone from 'react-dropzone';
 import axios from 'axios';
 
-
 function ImageUploader() {
   const [files, setFiles] = useState([]);
 
@@ -73,7 +72,7 @@ function ImageUploader() {
   
   return (
     <div>
-      <Dropzone onDrop={handleDrop}>
+      <Dropzone onDrop={handleDrop} class='Card'>
         
         {({ getRootProps, getInputProps }) => (
           <div {...getRootProps()}>
@@ -87,7 +86,7 @@ function ImageUploader() {
       <button onClick={handleLoad}>Load from local storage</button>
       {files.map((file) => (
         <div key={file.name}>
-          <img src={URL.createObjectURL(file)} alt={file.name} style={{ maxWidth: '200px', maxHeight: '200px' }} />
+          <img src={URL.createObjectURL(file)} alt={file.name} style={{ maxWidth: '80%', maxHeight: '300px' }} />
           <button onClick={() => setFiles((prevFiles) => prevFiles.filter((f) => f !== file))}>Remove</button>
         </div>
       ))}
